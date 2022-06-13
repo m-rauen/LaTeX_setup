@@ -85,20 +85,14 @@ let g:lightline = {
 
 set laststatus=2
 
-" LaTeX Live Preview Configs
-let g:livepreview_previewer = 'okular'
-let g:livepreview_engine = 'pdflatex'
-let g:livepreview_cursorhold_recompile = 0
-
 " Vim-tex Configs 
 let g:tex_flavor='latex'
 let g:vimtex_quickfix_mode=0
+let g:vimtex_view_method='okular'
 
 " UltiSnips Configs
 let g:UltiSnipsExpandTrigger = "<tab>" 
 let g:UltiSnipsJumpForwardTrigger = "<tab>" 
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
-let g:UltiSnipsSnippetDirectory=['UltiSnips']
 
 
