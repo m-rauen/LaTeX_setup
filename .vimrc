@@ -60,7 +60,7 @@ Plug 'poppyschmo/deoplete-latex'
 Plug 'rkulla/pydiction'
 Plug 'vim-scripts/taglist.vim'
 Plug 'yggdroot/indentline'
-Plug 'sirver/ultisnips'
+Plug 'SirVer/ultisnips'
 
 " Theme Stuff
 Plug 'morhetz/gruvbox'
@@ -94,5 +94,6 @@ let g:vimtex_view_method='general'
 let g:UltiSnipsExpandTrigger = "<tab>" 
 let g:UltiSnipsJumpForwardTrigger = "<tab>" 
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-
+let g:UltiSnipsSnippetsDir="/home/matheus-r/.vim/plugged/vim-snippets/UltiSnips"
+let g:UltiSnipsSnippetDirectories=["/home/matheus-r/.vim/plugged/vim-snippets/UltiSnips", "UltiSnips"]
 
