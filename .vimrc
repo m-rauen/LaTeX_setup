@@ -88,7 +88,7 @@ set laststatus=2
 " Vim-tex Configs 
 let g:tex_flavor='latex'
 let g:vimtex_quickfix_mode=0
-let g:vimtex_view_method='okular'
+let g:vimtex_view_method='general'
 
 " UltiSnips Configs
 let g:UltiSnipsExpandTrigger = "<tab>" 
