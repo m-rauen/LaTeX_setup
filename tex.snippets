@@ -47,35 +47,35 @@ def comment():
 endglobal
 
 snippet 'tempart' "Template - Article" b
-\\documentclass[12pt, a4 paper]{article}
-\\usepackage[utf8]{inputenc}
-\\usepackage[T1]{fontenc}
-\\usepackage[portuguese]{babel}
-\\usepackage{caption}
-\\usepackage{graphicx}
-\\usepackage{tcolorbox}
-\\usepackage{lmodern}
-\\usepackage{varwidth}
-\\usepackage{amsfonts}
-\\usepackage{amsmath}
-\\usepackage{amssymb}
-\\title{$1}
-\\author{Matheus Rauen Custódio da Luz}
-\\date{}
-\\usepackage{geometry}
+\documentclass[12pt, a4 paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[portuguese]{babel}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage{lmodern}
+\usepackage{varwidth}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\title{$1}
+\author{Matheus Rauen Custódio da Luz}
+\date{}
+\usepackage{geometry}
 
-\\geometry{
+\geometry{
 	left=15mm,
 	right=15mm,
 	top=10mm,
 	bottom=20mm,
 }
 
-\\begin{document}
-	\\maketitle
+\begin{document}
+	\maketitle
 	$0
 
-\\end{document}
+\end{document}
 endsnippet 
 
 snippet pac "\usepackage{}" b
