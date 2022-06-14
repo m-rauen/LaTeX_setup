@@ -97,3 +97,7 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 let g:UltiSnipsSnippetsDir="/home/matheus-r/.vim/plugged/vim-snippets/UltiSnips"
 let g:UltiSnipsSnippetDirectories=["/home/matheus-r/.vim/plugged/vim-snippets/UltiSnips", "UltiSnips"]
 
+" Gruvbox Configs
+let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_italicize_comments=1
+
