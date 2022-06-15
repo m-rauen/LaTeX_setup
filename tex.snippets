@@ -1,52 +1,25 @@
+##########
+# GLOBAL #
+##########
+
 global !p
-
-def create_table(snip):
-	rows = snip.buffer[snip.line].split('x')[0]
-	cols = snip.buffer[snip.line].split('x')[1]
-
-	int_val = lambda string: int(''.join(s for s in string if s.isdigit()))
-
-	rows = int_val(rows)
-	cols = int_val(cols)
-
-	offset = cols + 1
-	old_spacing = snip.buffer[snip.line][:snip.buffer[snip.line].rfind('\t') + 1]
-
-	snip.buffer[snip.line] = ''
-
-	final_str = old_spacing + "\\begin{tabular}{|" + "|".join(['$' + str(i + 1) for i in range(cols)]) + "|}\n"
-
-	for i in range(rows):
-		final_str += old_spacing + '\t'
-		final_str += " & ".join(['$' + str(i * cols + j + offset) for j in range(cols)])
-
-		final_str += " \\\\\\\n"
-
-	final_str += old_spacing + "\\end{tabular}\n$0"
-
-	snip.expand_anon(final_str)
-
-def add_row(snip):
-	row_len = int(''.join(s for s in snip.buffer[snip.line] if s.isdigit()))
-	old_spacing = snip.buffer[snip.line][:snip.buffer[snip.line].rfind('\t') + 1]
-
-	snip.buffer[snip.line] = ''
-
-	final_str = old_spacing
-	final_str += " & ".join(['$' + str(j + 1) for j in range(row_len)])
-	final_str += " \\\\\\"
-
-	snip.expand_anon(final_str)
 
 def math():
 	return vim.eval('vimtex#syntax#in_mathzone()') == '1'
-
-def comment():
+def comment(): 
 	return vim.eval('vimtex#syntax#in_comment()') == '1'
+def env(name):
+	[x,y] = vim.eval("vimtex#env#is_inside('" + name + "')") 
+	return x != '0' and y != '0'
 
 endglobal
 
-snippet 'tempart' "Template - Article" b
+
+###############
+# ENVIRONMENT #
+###############
+
+snippet trelat "Template - Article" b
 \documentclass[12pt, a4 paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -76,21 +49,45 @@ snippet 'tempart' "Template - Article" b
 	$0
 
 \end{document}
-endsnippet 
+endsnippet
+
+snippet tbasic "Basic template" b
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[portuguese]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{
+	left=15mm,
+	right=15mm,
+	top=10mm,
+	bottom=20mm,
+}
+
+
+\begin{document}
+	$0
+\end{document}
+endsnippet
 
 snippet pac "\usepackage{}" b
 \usepackage{$1}
-endsnippet 
+endsnippet
 
 snippet pack "\usepackage[]{}" b
 \usepackage[$1]{$2}
-endsnippet 
+endsnippet
 
-snippet tcbox "\tcbox[...]{}" bA 
+snippet tcbox "\tcbox[...]{}" bA
 \tcbox[tcbox raise base, colback=white]{$1} $0
-endsnippet 
+endsnippet
 
-snippet 'beg' "begin{} / end{}" bA 
+snippet beg "begin{} / end{}" bA
 \begin{$1}
 	$0
 \end{$1}
@@ -116,58 +113,58 @@ snippet dm "Math" wA
 \[
 ${1:${VISUAL}}
 .\] $0
-endsnippet 
+endsnippet
 
 context "math()"
 snippet sq "\sqrt{}" iA
 \sqrt{${1:${VISUAL}}} $0
-endsnippet 
+endsnippet
 
-snippet sbS "subscript" iA  
+snippet sbS "subscript" iA
 _{${1:${VISUAL}}} $0
-endsnippet 
+endsnippet
 
 snippet spS "superscript" iA
 ^{${1:${VISUAL}}} $0
 endsnippet
 
-snippet frac "Fraction" b 
+snippet frac "Fraction" b
 \frac{$1}{$2}
-endsnippet 
+endsnippet
 
 snippet eq "Equation w/ number" b
 \begin{equation}
 $1
 \end{equation}
-endsnippet 
+endsnippet
 
 snippet eq* "Equation wo/ number" b
 \begin{equation*}
 $1
 \end{equation*}
-endsnippet 
+endsnippet
 
-snippet eqv "Equivalent sign" iA 
-\eqv 
-endsnippet 
+snippet eqv "Equivalent sign" iA
+\eqv
+endsnippet
 
-snippet approx "Approximately" iA 
-\approx 
-endsnippet 
-
-context "math()"
-snippet // "Fraction" iA 
-\frac{$1}{$2}
-endsnippet 
+snippet approx "Approximately" iA
+\approx
+endsnippet
 
 context "math()"
-snippet '//d' "Fraction" iA 
+snippet // "Fraction" iA
 \frac{$1}{$2}
-endsnippet 
+endsnippet
 
-snippet dfrac "Fraction" b 
+context "math()"
+snippet '//d' "Fraction" iA
+\frac{$1}{$2}
+endsnippet
+
+snippet dfrac "Fraction" b
 \dfrac{$1}{$2}
-endsnippet 
+endsnippet
 
 snippet abs "abstract environment" b
 \begin{abstract}
@@ -178,7 +175,7 @@ endsnippet
 snippet tab "tabular / array environment" b
 \begin{center}
 	\begin{tabular}{${1:{c|c|..}}}
-	\hline 
+	\hline
 	$2
 	\end{tabular}
 \end{center}
@@ -245,7 +242,7 @@ endsnippet
 snippet sec* "Section"
 \section*{${1:${VISUAL:section name}}}%
 $0
-endsnippet 
+endsnippet
 
 snippet sub "Subsection"
 \subsection{${1:${VISUAL:subsection name}}}%
