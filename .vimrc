@@ -76,7 +76,7 @@ if executable('rg')
 endif
 
 " LaTeX Live Preview Configs
-let g:livepreview_previewer = 'okular'
+" let g:livepreview_previewer = 'okular'
 let g:livepreview_engine = 'pdflatex'
 let g:livepreview_cursorhold_recompile = 0
 
