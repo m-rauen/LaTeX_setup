@@ -44,9 +44,6 @@ Plug 'honza/vim-snippets'
 Plug 'sirver/ultisnips'
 Plug 'itchyny/lightline.vim'
 
-" Typescript Stuff
-Plug 'leafgarland/typescript-vim'
-
 " Markdown Stuff
 Plug 'gabrielelana/vim-markdown'
 
