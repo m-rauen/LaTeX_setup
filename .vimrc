@@ -41,6 +41,7 @@ Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 Plug 'honza/vim-snippets'
+Plug 'jayli/vim-easycomplete'
 Plug 'sirver/ultisnips'
 Plug 'itchyny/lightline.vim'
 
@@ -113,4 +114,7 @@ let g:lightline = {
 set laststatus=2
 
 " VimCompletesMe Configs 
-autocmd FileType vim let b:vcm_tab_complete = 'vim'
+" autocmd FileType vim let b:vcm_tab_complete = 'vim'
+
+" EasyComplete Configs
+let g:easycomplete_diagnostics_enable = 1
