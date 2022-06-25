@@ -118,3 +118,6 @@ set laststatus=2
 
 " EasyComplete Configs
 let g:easycomplete_diagnostics_enable = 1
+let g:easycomplete_scheme="dark"
+nnoremap <silent> <C-j> :EasyCompleteNextDiagnostic<CR>
+nnoremap <silent> <C-k> :EasyCompletePreviousDiagnostic<CR>
