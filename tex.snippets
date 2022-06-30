@@ -19,6 +19,65 @@ endglobal
 # ENVIRONMENT #
 ###############
 
+snippet tproject "Template - Project" b
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{achemso}
+\usepackage[portuguese, english]{babel}
+\usepackage{varioref}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{soul}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions
+to tables and figures
+\usepackage{float}
+\usepackage[version=4]{mhchem}
+\usepackage[math, condensed]{iwona}
+\usepackage[T1]{fontenc}
+\usepackage{bbding}
+\usepackage{blindtext}
+\usepackage{braket}
+\usepackage[bottom=3cm,top=3cm,left=2.0cm,right=2.0cm]{geometry}
+\usepackage{indentfirst}
+\usepackage[table]{xcolor}
+\usepackage{url}
+\usepackage{eurosym}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	citecolor=red,
+	linkcolor=blue,
+	urlcolor=blue,}
+
+\begin{document}
+
+\selectlanguage{$1}
+
+% Title, authors, registration, etc here
+\begin{centering}
+\Large{{\textbf{$2}}}
+\large \textbf{Departamento de Química - CFM - UFSC}
+\end{centering}
+
+% Abstract here
+\begin{abstract}
+\noindent
+$3
+\end{abstract}
+
+\selectlanguage{$4}
+
+\section{$5}
+
+\section{$6}
+
+\section{$7}
+
+\end{document}
+endsnippet
+
 snippet trelat "Template - Article" b
 \documentclass[12pt, a4 paper]{article}
 \usepackage[utf8]{inputenc}
@@ -45,8 +104,14 @@ snippet trelat "Template - Article" b
 }
 
 \begin{document}
-	\maketitle
-	$0
+\maketitle
+$0
+
+
+\begin{multicols}{2}
+\bibliographystyle{abbrv}
+\bibliography{$1}
+\end{multicols}
 
 \end{document}
 endsnippet
