@@ -41,9 +41,11 @@ Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 Plug 'honza/vim-snippets'
-Plug 'jayli/vim-easycomplete'
 Plug 'sirver/ultisnips'
 Plug 'itchyny/lightline.vim'
+
+" Typescript Stuff
+Plug 'leafgarland/typescript-vim'
 
 " Markdown Stuff
 Plug 'gabrielelana/vim-markdown'
@@ -77,7 +79,7 @@ if executable('rg')
 endif
 
 " LaTeX Live Preview Configs
-" let g:livepreview_previewer = 'okular'
+let g:livepreview_previewer = 'okular'
 let g:livepreview_engine = 'pdflatex'
 let g:livepreview_cursorhold_recompile = 0
 
@@ -114,10 +116,4 @@ let g:lightline = {
 set laststatus=2
 
 " VimCompletesMe Configs 
-" autocmd FileType vim let b:vcm_tab_complete = 'vim'
-
-" EasyComplete Configs
-let g:easycomplete_diagnostics_enable = 1
-let g:easycomplete_scheme="dark"
-nnoremap <silent> <C-j> :EasyCompleteNextDiagnostic<CR>
-nnoremap <silent> <C-k> :EasyCompletePreviousDiagnostic<CR>
+autocmd FileType vim let b:vcm_tab_complete = 'vim'
