@@ -3,7 +3,6 @@
 ##########
 
 global !p
-
 def math():
 	return vim.eval('vimtex#syntax#in_mathzone()') == '1'
 def comment(): 
@@ -11,7 +10,6 @@ def comment():
 def env(name):
 	[x,y] = vim.eval("vimtex#env#is_inside('" + name + "')") 
 	return x != '0' and y != '0'
-
 endglobal
 
 
@@ -234,38 +232,38 @@ snippet cha "Chapter" b
 $0
 endsnippet
 
-snippet sec "Section"
+snippet sec "Section" bA 
 \section{${1:${VISUAL:section name}}}%
 $0
 endsnippet
 
-snippet sec* "Section"
+snippet sec* "Section" bA 
 \section*{${1:${VISUAL:section name}}}%
 $0
 endsnippet
 
-snippet sub "Subsection"
+snippet sub "Subsection" bA 
 \subsection{${1:${VISUAL:subsection name}}}%
 $0
 endsnippet
 
-snippet sub* "Subsection"
+snippet sub* "Subsection" bA 
 \subsection*{${1:${VISUAL:subsection name}}}%
 $0
 endsnippet
 
-snippet ssub "Subsubsection"
+snippet ssub "Subsubsection" bA  
 \subsubsection{${1:${VISUAL:subsubsection name}}}%
 $0
 endsnippet
 
-snippet ssub* "Subsubsection"
+snippet ssub* "Subsubsection" bA 
 \subsubsection*{${1:${VISUAL:subsubsection name}}}%
 ${0}
 endsnippet
 
-snippet par "Paragraph"
-\paragraph{${1:${VISUAL:paragraph name}}}%
+snippet par "Paragraph" bA
+\paragraph{$1}
 $0
 endsnippet
 

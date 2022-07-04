@@ -34,7 +34,6 @@ call plug#begin('~/.vim/plugged')
 " Vim Stuff
 Plug 'tpope/vim-fugitive'
 Plug 'vim-utils/vim-man'
-Plug 'ajh17/vimcompletesme'
 Plug 'ervandew/supertab'
 Plug 'raimondi/delimitmate'
 Plug 'majutsushi/tagbar'
@@ -113,11 +112,11 @@ let g:lightline = {
 
 set laststatus=2
 
-" VimCompletesMe Configs 
-" autocmd FileType vim let b:vcm_tab_complete = 'vim'
-
 " EasyComplete Configs
-let g:easycomplete_diagnostics_enable = 1
+let g:easycomplete_diagnostics_enable = 0
 let g:easycomplete_scheme="dark"
 nnoremap <silent> <C-j> :EasyCompleteNextDiagnostic<CR>
 nnoremap <silent> <C-k> :EasyCompletePreviousDiagnostic<CR>
+
+" Supertab Configs
+packloadall 
