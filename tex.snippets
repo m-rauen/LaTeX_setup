@@ -17,66 +17,7 @@ endglobal
 # ENVIRONMENT #
 ###############
 
-snippet tproject "Template - Project" b
-\documentclass[12pt]{article}
-\usepackage[utf8]{inputenc}
-\usepackage{achemso}
-\usepackage[portuguese, english]{babel}
-\usepackage{varioref}
-\usepackage{amsmath}
-\usepackage{multicol}
-\usepackage{soul}
-\usepackage{amssymb}
-\usepackage{graphicx}
-\usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions
-to tables and figures
-\usepackage{float}
-\usepackage[version=4]{mhchem}
-\usepackage[math, condensed]{iwona}
-\usepackage[T1]{fontenc}
-\usepackage{bbding}
-\usepackage{blindtext}
-\usepackage{braket}
-\usepackage[bottom=3cm,top=3cm,left=2.0cm,right=2.0cm]{geometry}
-\usepackage{indentfirst}
-\usepackage[table]{xcolor}
-\usepackage{url}
-\usepackage{eurosym}
-\usepackage{hyperref}
-\hypersetup{
-	colorlinks=true,
-	citecolor=red,
-	linkcolor=blue,
-	urlcolor=blue,}
-
-\begin{document}
-
-\selectlanguage{$1}
-
-% Title, authors, registration, etc here
-\begin{centering}
-\Large{{\textbf{$2}}}
-\large \textbf{Departamento de Química - CFM - UFSC}
-\end{centering}
-
-% Abstract here
-\begin{abstract}
-\noindent
-$3
-\end{abstract}
-
-\selectlanguage{$4}
-
-\section{$5}
-
-\section{$6}
-
-\section{$7}
-
-\end{document}
-endsnippet
-
-snippet trelat "Template - Article" b
+snippet trelat "Template - Article" bA
 \documentclass[12pt, a4 paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -102,19 +43,13 @@ snippet trelat "Template - Article" b
 }
 
 \begin{document}
-\maketitle
-$0
-
-
-\begin{multicols}{2}
-\bibliographystyle{abbrv}
-\bibliography{$1}
-\end{multicols}
+	\maketitle
+	$0
 
 \end{document}
 endsnippet
 
-snippet tbasic "Basic template" b
+snippet tbasic "Basic template" bA
 \documentclass[a4paper]{article}
 
 \usepackage[utf8]{inputenc}
@@ -154,13 +89,6 @@ snippet beg "begin{} / end{}" bA
 \begin{$1}
 	$0
 \end{$1}
-endsnippet
-
-snippet 'bbg'  "bibliography stuff" br
-\nocite{*}
-\bibliographystyle{abbrv}
-\bibliography{$1}
-$0
 endsnippet
 
 snippet mk "Math" wA
@@ -221,8 +149,8 @@ snippet // "Fraction" iA
 endsnippet
 
 context "math()"
-snippet '//d' "Fraction" iA
-\frac{$1}{$2}
+snippet '/d' "Fraction" iA
+\dfrac{$1}{$2}
 endsnippet
 
 snippet dfrac "Fraction" b
@@ -297,37 +225,37 @@ snippet cha "Chapter" b
 $0
 endsnippet
 
-snippet sec "Section" bA 
-\section{${1:${VISUAL:section name}}}%
+snippet sec "Section" b 
+\section{$1}%
 $0
 endsnippet
 
 snippet sec* "Section" bA 
-\section*{${1:${VISUAL:section name}}}%
+\section*{$1}
 $0
 endsnippet
 
-snippet sub "Subsection" bA 
-\subsection{${1:${VISUAL:subsection name}}}%
+snippet sub "Subsection" b 
+\subsection{$1}%
 $0
 endsnippet
 
 snippet sub* "Subsection" bA 
-\subsection*{${1:${VISUAL:subsection name}}}%
+\subsection*{$1}%
 $0
 endsnippet
 
-snippet ssub "Subsubsection" bA  
-\subsubsection{${1:${VISUAL:subsubsection name}}}%
+snippet ssub "Subsubsection" b 
+\subsubsection{$1}
 $0
 endsnippet
 
-snippet ssub* "Subsubsection" bA 
-\subsubsection*{${1:${VISUAL:subsubsection name}}}%
-${0}
+snippet ssub* "Subsubsection" bA
+\subsubsection*{$1}
+$0
 endsnippet
 
-snippet par "Paragraph" bA
+snippet par "Paragraph" b
 \paragraph{$1}
 $0
 endsnippet

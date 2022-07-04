@@ -40,11 +40,9 @@ Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 Plug 'honza/vim-snippets'
+Plug 'jayli/vim-easycomplete'
 Plug 'sirver/ultisnips'
 Plug 'itchyny/lightline.vim'
-
-" Typescript Stuff
-Plug 'leafgarland/typescript-vim'
 
 " Markdown Stuff
 Plug 'gabrielelana/vim-markdown'
@@ -78,7 +76,7 @@ if executable('rg')
 endif
 
 " LaTeX Live Preview Configs
-let g:livepreview_previewer = 'okular'
+" let g:livepreview_previewer = 'okular'
 let g:livepreview_engine = 'pdflatex'
 let g:livepreview_cursorhold_recompile = 0
 
@@ -92,12 +90,11 @@ set conceallevel=1
 let g:tex_conceal='abdmg'
 hi Conceal ctermbg=none
 
-
 " UltiSnips Configs
 let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<c-tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
+let g:UltiSnipsSnippetsDir="~/.vim/plugged/vim-snippets/UltiSnips"
 let g:UltiSnipsSnippetDirectory=['UltiSnips']
 
 " Lightline Configs 
@@ -114,16 +111,10 @@ let g:lightline = {
 
 set laststatus=2
 
-<<<<<<< HEAD
 " EasyComplete Configs
+let g:easycomplete_tab_trigger="<c-space>"
 let g:easycomplete_diagnostics_enable = 0
 let g:easycomplete_scheme="dark"
 nnoremap <silent> <C-j> :EasyCompleteNextDiagnostic<CR>
 nnoremap <silent> <C-k> :EasyCompletePreviousDiagnostic<CR>
 
-" Supertab Configs
-packloadall 
-=======
-" VimCompletesMe Configs 
-autocmd FileType vim let b:vcm_tab_complete = 'vim'
->>>>>>> c6af5ab2e4a1f43a8f084a821db8c5225882d19e
